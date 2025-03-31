@@ -10,13 +10,6 @@
 
         <div class="collapse navbar-collapse justify-content-start gap-3" id="navbarSupportedContent">
             <ul class="navbar-nav mb-lg-0">
-                <!-- Dropdown for Search (Visible on Small Screens) -->
-                <li class="nav-item d-lg-none">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-primary" type="submit">Search</button>
-                    </form>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
@@ -32,25 +25,13 @@
 
             </ul>
         </div>
-
-        <!-- Search Bar (Visible on Large Screens) -->
-        <!-- <form class="d-flex d-none d-lg-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-primary me-2" type="submit">Search</button>
-        </form> -->
-
         <button class="btn btn-outline-secondary d-none d-lg-inline"  id="darkModeBtnLg"  onclick="toggleDarkMode()">Dark Mode</button>
-        <!-- class="btn btn-outline-secondary d-none d-lg-inline"  -->
     </div>
 </nav>
-<script>
 
-    
-
-</script>
 <style>
     body {
-        padding-top: 56px; /* Prevent content from being hidden under navbar */
+        padding-top: 56px; 
     }
     .navbar.scrolled-navbar {
         background-color: rgba(0, 0, 0, 0.8) !important;
@@ -59,7 +40,6 @@
     .scrolled-navbar .nav-link{
         color: white !important;
     }
-    /* Ensure active page link is visible */
     .scrolled-navbar .nav-link.active {
         color: #f8f9fa !important;
     }

@@ -20,20 +20,20 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="fname" class="form-label">First Name:</label>
-                            <input type="text" id="fname" name="fname" class="form-control" placeholder="First Name" required>
+                            <input type="text" id="fname" name="fname" class="form-control" placeholder="First Name" >
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="lname" class="form-label">Last Name:</label>
-                            <input type="text" id="lname" name="lname" class="form-control" placeholder="Last Name" required>
+                            <input type="text" id="lname" name="lname" class="form-control" placeholder="Last Name" >
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Email" >
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Message:</label>
-                        <textarea id="message" name="message" class="form-control" rows="4" placeholder="Message..." required></textarea>
+                        <textarea id="message" name="message" class="form-control" rows="4" placeholder="Message..." ></textarea>
                     </div>
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -48,5 +48,37 @@
 
 <script src="js/script.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        let fname = document.getElementById("fname").value.trim();
+        let lname = document.getElementById("lname").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
+
+        let emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
+        let errors = [];
+
+        if (!fname) errors.push("First name is required.");
+        if (!lname) errors.push("Last name is required.");
+        if (!email) errors.push("Email is required.");
+        else if (!emailRegex.test(email)) errors.push("Invalid email format.");
+        if (message.length < 10) errors.push("Message must be at least 10 characters long.");
+
+        let alertBox = document.getElementById("alert");
+        if (errors.length > 0) {
+            alertBox.className = "alert alert-danger";
+            alertBox.innerHTML = errors.join("<br>");
+            alertBox.classList.remove("d-none");
+        } else {
+            alertBox.className = "alert alert-success";
+            alertBox.innerHTML = "Form submitted successfully!";
+            alertBox.classList.remove("d-none");
+        }
+    });
+</script>
+
+
 </body>
 </html>
