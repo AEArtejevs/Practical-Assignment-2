@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <a href="/index.html" class="navbar-brand">Stillife</a>
+        <button class="btn btn-outline-secondary me-2 d-lg-none" id="darkModeBtnLg"  onclick="toggleDarkMode()">Dark Mode</button>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-start gap-3" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-lg-0">
+                <!-- Dropdown for Search (Visible on Small Screens) -->
+                <li class="nav-item d-lg-none">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- Search Bar (Visible on Large Screens) -->
+        <!-- <form class="d-flex d-none d-lg-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary me-2" type="submit">Search</button>
+        </form> -->
+
+        <button class="btn btn-outline-secondary d-none d-lg-inline"  id="darkModeBtnLg"  onclick="toggleDarkMode()">Dark Mode</button>
+        <!-- class="btn btn-outline-secondary d-none d-lg-inline"  -->
+    </div>
+</nav>
+<script>
+
+    
+
+</script>
+<style>
+    body {
+        padding-top: 56px; /* Prevent content from being hidden under navbar */
+    }
+    .navbar.scrolled-navbar {
+        background-color: rgba(0, 0, 0, 0.8) !important;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .scrolled-navbar .nav-link{
+        color: white !important;
+    }
+    /* Ensure active page link is visible */
+    .scrolled-navbar .nav-link.active {
+        color: #f8f9fa !important;
+    }
+    
+    
+</style>
