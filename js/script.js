@@ -23,14 +23,13 @@ fetch("footer.html")
     .then(data => {
         document.getElementById("footer").innerHTML = data;
         document.querySelector(".year").textContent = new Date().getFullYear();
-        footer.addEventListener("mouseover", () => footer.style.backgroundColor = "aliceblue");
+        footer.addEventListener("mouseover", () => footer.style.backgroundColor = "rgb(36, 35, 41)");
         footer.addEventListener("mouseout", () => footer.style.backgroundColor = "white");
     })
     .catch(error => console.error("Error loading the footer:", error));
 
     function toggleDarkMode() {
         const body = document.querySelector("body"); // Using body element directly
-        const navbar = document.querySelector("header");  
         if (body.classList.contains("bg-light") || navbar.classList.contains("bg-light")) {
             // If it's in light mode, switch to dark mode
             body.classList.remove("bg-light");
